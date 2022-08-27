@@ -1,6 +1,14 @@
 import openpyxl
 
-wb = openpyxl.load_workbook("/tmp/test.xlsx")\
+wb = openpyxl.load_workbook("/tmp/test.xlsx")
 
 
-print([[cell.value for cell in row] for row in wb['Sheet1']['A1:C5']])
+# sheet1
+ws = wb["Sheet1"]
+
+ws["A1"] = "hoge"
+
+
+
+# 保存
+wb.save("/tmp/sample.xlsx")
